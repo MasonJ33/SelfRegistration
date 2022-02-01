@@ -5,6 +5,7 @@ import "./App.css";
 import { Home } from "./components/home";
 import { NavBar } from "./components/navBar"
 import { SelfRegistration } from "./components/selfRegistration";
+import { Videos } from "./components/videos";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/selfRegistration" element={<SelfRegistration />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/videos" element={<Videos />} />
         </Routes>
     </div>
   );
