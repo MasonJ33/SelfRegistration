@@ -15,7 +15,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const pages = [
   {label: "Home", value: "home"},
-  {label: "Self Registration", value: "selfRegistration"}
+  {label: "Self Registration", value: "selfRegistration"},
+  {label: "Videos", value: "videos"}
 ];
 
 export const NavBar = () => {
