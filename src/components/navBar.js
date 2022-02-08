@@ -16,7 +16,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 const pages = [
   {label: "Home", value: "home"},
   {label: "Self Registration", value: "selfRegistration"},
-  {label: "Videos", value: "videos"}
+  {label: "Videos", value: "videos"},
+  {label: "About", value:"about"}
 ];
 
 export const NavBar = () => {
@@ -98,7 +99,7 @@ export const NavBar = () => {
                             <StyledButton
                                 key={page.value}
                                 onClick={() => navigate(`./${page.value}`)}
-                                sx={{ my: 2, color: 'white', display: 'block', borderRight: '0.1em solid #176122', padding: '0.5em' }}
+                                sx={{ my: 2, color: 'white', display: 'block', padding: '0.5em' }}
                             >
                                 {page.label}
                             </StyledButton>
