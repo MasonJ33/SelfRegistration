@@ -6,6 +6,7 @@ import { Home } from "./components/home";
 import { NavBar } from "./components/navBar"
 import { SelfRegistration } from "./components/selfRegistration";
 import { Videos } from "./components/videos";
+import { AboutPage } from "./components/about";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/selfRegistration" element={<SelfRegistration />} />
         <Route path="/home" element={<Home />} />
         <Route path="/videos" element={<Videos />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </div>

@@ -13,7 +13,12 @@ export const MockWindow = ({ setPaws }) => {
       <NavBar>
         <Header key="header">
           <img src={pawsLogo} alt="Logo" height={80} width={180}/>
-          <Slogan>Unify <br /> bring it all together</Slogan>
+          <Slogan>
+            <SiteName>
+            Unify
+            </SiteName>
+            bring it all together
+            </Slogan>
         </Header>
         <Navs key="navs">
           <Tab key="startHere">Start Here</Tab>
@@ -46,6 +51,12 @@ export const MockWindow = ({ setPaws }) => {
   )
 }
 
+const SiteName = styled.div`
+  font-style: normal;
+  font-family: Georgia,"Times New Roman",Times,serif;
+  font-size: 24px;
+`;
+
 
 const MiddleContainer = styled.div`
   display: flex;
@@ -55,6 +66,7 @@ const MiddleContainer = styled.div`
 `;
 
 const Tab = styled(Button)`
+  min-width: 110px;
   border-radius: 10px 10px 0px 0px;
   background-color: #B3C2D1;
   color: black;
@@ -68,15 +80,16 @@ const Tab = styled(Button)`
 
 const Navs = styled.ul`
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  gap: 6px;
+  margin-left: 0;
+  margin-bottom: 0;
 `;
 
 const Window = styled.div`
   display: flex;
   flex-direction: column;
-  height: 85%;
-  min-width: 800px;
+  height: 700px;
+  min-width: 1600px;
   background-color: white;
   overflow: auto;
   border-style: solid;
@@ -84,15 +97,16 @@ const Window = styled.div`
   border-color: white;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-`;
+  overflow-y: auto;
+  `;
 
 const NavBar = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 10px;
   padding-right: 250px;
-  padding-left: 200px;
-  height: 22.5%;
+  padding-left: 170px;
+  height: 200px;
   background-color: #003366;
 `;
 
@@ -102,9 +116,9 @@ const Header = styled.div`
 `;
 
 const Slogan = styled.div`
-  float: left;
+  font-style: italic;
   color: white;
-  padding-top: 34px;
+  padding-top: 20px;
   margin: 0 0 30px 15px;  
 `;
 
