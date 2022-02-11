@@ -14,9 +14,9 @@ export const Videos = () => {
           <Window>
           <Grid container spacing={1}>
             {videos.map((video) => (
-              <Grid key={video} item xs={4}>
+              <VidGrid key={video} item xs={4}>
                 <VideoCard title={video}/>
-              </Grid>
+              </VidGrid>
             ))}
           </Grid>
           <Container>
@@ -25,14 +25,17 @@ export const Videos = () => {
                 <br />
                 <StyledButton onClick={() => navigate('/selfRegistration')}>Click Here</StyledButton>
                 to go to SelfRegistration Demos.
-                <br />
-                This is to see where the scroll shows
               </Message>
           </Container>
           </Window>
         </Page>
     )
 }
+
+const VidGrid = styled(Grid)`
+  display: flex;
+  justify-content: center;
+`;
 
 const StyledButton = styled(Button)`
   background-color: #176122;

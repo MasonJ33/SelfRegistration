@@ -2,53 +2,38 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import CancelIcon from '@mui/icons-material/Cancel';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
-import { Accordion, AccordionDetails, AccordionSummary, IconButton, Typography } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export const VideoCard = ({ title, video }) => {
   const [watched, setWatched] = useState(false);
 
   return (
     <VideoContainer>
-    <Card>
-      <HeaderContainer>
-        {title}
-      </HeaderContainer>
-      <VideoWindow>
-        <IconButton onClick={() => setWatched(!watched)}>
-          {/*TODO: add actual video/thumbnail here*/}
-          <PlayCircleIcon />
-        </IconButton>
-      </VideoWindow>
-    </Card>
-    {watched ? (
+      <Card>
+        <HeaderContainer>
+          {title}
+        </HeaderContainer>
+        <VideoWindow>
+          <IconButton onClick={() => setWatched(!watched)}>
+            {/*TODO: add actual video/thumbnail here*/}
+            <PlayCircleIcon />
+          </IconButton>
+        </VideoWindow>
+      </Card>
+      {watched ? (
         <AccordionFooter watch>
-          <AccordionSummary
-             expandIcon={<ExpandMoreIcon />}
-             aria-controls="panel1a-content"
-             id="panel1a-header"
-          >
-            Completion Status:
-            <CheckCircleIcon color='success' />
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography></Typography>{/*TODO add transcripts here*/}
-          </AccordionDetails>
+          <Typography>
+          Completion Status:
+          <CheckCircleIcon color='success' />
+          </Typography>
         </AccordionFooter>
       ) : (
         <AccordionFooter >
-          <AccordionSummary
-             expandIcon={<ExpandMoreIcon />}
-             aria-controls="panel1a-content"
-             id="panel1a-header"
-          >
-            Completion Status:
-            <CancelIcon color='warning' />
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>A quick brown fox jumped over the zay dog. abc efg hig hijkl mnopqr stu vw xyz</Typography>{/*TODO add transcripts here*/}
-          </AccordionDetails>
+          <Typography>
+          Completion Status:
+          <CancelIcon color='warning' />
+          </Typography>
         </AccordionFooter>
       )}
     </VideoContainer>
@@ -78,7 +63,7 @@ const HeaderContainer = styled.div`
   font-size: 24px;
   font-weight: 500;
   color: white;
-  background-color: #001580;
+  background-color: #176122;
   padding-left: 8px;
   margin: 0;
 `;
@@ -90,11 +75,10 @@ const VideoWindow = styled.div`
   margin: 0;
 `;
 
-const AccordionFooter = styled(Accordion)`
+const AccordionFooter = styled.div`
+  height: 50px;
   width: 100%;
   border-top: ${props => props.watch ? "5px solid #176122" : "5px solid red"};
-  .&&{
-    border-radius: 0 0 25px 25px;
-  }
+  border-radius: 0 0 25px 25px;
   padding-left: 8px;
 `;

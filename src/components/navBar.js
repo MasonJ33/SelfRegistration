@@ -78,11 +78,9 @@ export const NavBar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                              <>
                                 <MenuItem key={page.value} onClick={() => handleCloseNavMenu(page.value)}>
                                     <Typography textAlign="center">{page.label}</Typography>
                                 </MenuItem>
-                              </>
                             ))}
                         </Menu>
                     </Box>
