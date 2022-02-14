@@ -5,6 +5,7 @@ import { Button, Grid } from "@mui/material";
 import React from "react";
 
 export const Home = () => {
+  let navigate = useNavigate();
   return (
     <Page>
       <Window>
@@ -13,13 +14,20 @@ export const Home = () => {
             Welcome to Georgia College's Self-Registration tutorial website!
           </Head>
           <Body>
-            <br />
             This website is designed to help you learn and eventually complete the self-registration process!
             Above in the navbar you will see different tabs that will help with this learning process.
             We reccomend you start with the videos, which will help you learn the layouts and different links needed to follow
             to start the self-registration process!
-            <br />
-            <br />
+          </Body>
+        </Container>
+        <Container2>
+        <Message>
+            <StyledButton onClick={() => navigate('/videos')}>Click Here</StyledButton>
+            to get started with video tutorials!
+          </Message>
+        </Container2>
+        <Container>  
+          <Body>
             Below are some links to the actual PAWS and Unify websites in case you have completed everything here and wish to try
             logging in on the actual sites.
           </Body>
@@ -53,9 +61,14 @@ const Page = styled.div`
 `;
 
 const Container = styled.div`
-  margin-top: 100px;
+  margin-top: 30px;
   color: #176122;
   text-align: left;
+`;
+
+const Container2 = styled.div`
+  color: #176122;
+  text-align: center;
 `;
 
 const Window = styled.div`
