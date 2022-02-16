@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 import { useNavigate } from "react-router-dom";
-import { Button, Grid } from "@mui/material";
+import { Button} from "@mui/material";
 import React from "react";
 
 export const Home = () => {
