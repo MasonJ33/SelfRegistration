@@ -63,7 +63,7 @@ const HeaderContainer = styled.div`
   font-size: 24px;
   font-weight: 500;
   color: white;
-  background-color: #176122;
+  background-color: #005028;
   padding-left: 8px;
   margin: 0;
 `;
@@ -78,7 +78,7 @@ const VideoWindow = styled.div`
 const AccordionFooter = styled.div`
   height: 50px;
   width: 100%;
-  border-top: ${props => props.watch ? "5px solid #176122" : "5px solid red"};
+  border-top: ${props => props.watch ? "5px solid #005028" : "5px solid red"};
   border-radius: 0 0 25px 25px;
   padding-left: 8px;
 `;

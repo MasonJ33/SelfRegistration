@@ -7,18 +7,18 @@ import unifyBody from "../assests/unify-body.PNG";
 import { Button, Grid } from "@mui/material";
 import { UnifyOptions } from "./unifyOptions";
 
-export const MockWindow = ({ setPaws }) => {
+export const MockWindow = ({ tutorial, hint, setProgress }) => {
   return (
     <Window>
       <NavBar>
         <Header key="header">
-          <img src={pawsLogo} alt="Logo" height={80} width={180}/>
+          <img src={pawsLogo} alt="Logo" height={80} width={180} />
           <Slogan>
             <SiteName>
-            Unify
+              Unify
             </SiteName>
             bring it all together
-            </Slogan>
+          </Slogan>
         </Header>
         <Navs key="navs">
           <Tab key="startHere">Start Here</Tab>
@@ -34,16 +34,16 @@ export const MockWindow = ({ setPaws }) => {
       <Page>
         <Grid container spacing={0.5}>
           <Grid item xs={2.5}>
-            <img src={unifyLogin} alt="side" height={400}/>
+            <img src={unifyLogin} alt="side" height={400} />
           </Grid>
           <Grid item xs={7}>
             <MiddleContainer>
-                <UnifyOptions setPaws={setPaws} />
-              <img src={unifyBody} alt="body" height={600} width={550}/>
+              <UnifyOptions tutorial={tutorial} hint={hint} setProgress={setProgress}/>
+              <img src={unifyBody} alt="body" height={600} width={550} />
             </MiddleContainer>
           </Grid>
           <Grid item xs={2.5}>
-            <img src={pawsSideBar} alt="side" height={500} width={200}/>
+            <img src={pawsSideBar} alt="side" height={500} width={200} />
           </Grid>
         </Grid>
       </Page>
@@ -94,11 +94,10 @@ const Window = styled.div`
   overflow: auto;
   border-style: solid;
   border-width: 5px;
-  border-color: white;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border-color: #005028;
+  border-radius: 5px 5px 0 0;
   overflow-y: auto;
-  `;
+`;
 
 const NavBar = styled.div`
   display: flex;

@@ -23,7 +23,7 @@ export const Videos = () => {
               <Message>
                 Ready for the Walkthrough Self Registration Demos?
                 <br />
-                <StyledButton onClick={() => navigate('/selfRegistration')}>Click Here</StyledButton>
+                <StyledButton onClick={() => navigate('/tutorials')}>Click Here</StyledButton>
                 to go to SelfRegistration Demos.
               </Message>
           </Container>
@@ -38,7 +38,7 @@ const VidGrid = styled(Grid)`
 `;
 
 const StyledButton = styled(Button)`
-  background-color: #176122;
+  background-color: #005028;
   margin-right: 12px;
   color: white;
   &:hover {
@@ -52,7 +52,7 @@ const Message = styled.h1`
 
 const Container = styled.div`
   margin-top: 100px;
-  color: #176122;
+  color: #005028;
   text-align: center;
 `;
 
@@ -62,7 +62,7 @@ const PageTitle = styled.div`
   justify-content: center;
   border-radius: 5px;
   background-color: white;
-  color: #176122;
+  color: #005028;
   font-size: 20px;
   font-weight: 600;
   padding: 4px 16px;
@@ -76,11 +76,7 @@ const Window = styled.div`
   min-width: 1600px;
   height: 700px;
   background-color: white;
-  border-color: #001580;
   border-radius: 25px;
-  border-style: solid;
-  border-width: thick;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   padding: 30px 30px 30px 30px;
   overflow-y: auto;
 `;
@@ -90,5 +86,5 @@ const Page = styled.div`
   justify-content: center;
   align-items: center;
   height: 90vh;
-  background-color: #176122;
+  background-color: white;
 `;

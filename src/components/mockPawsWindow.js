@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import pawsLogo from "../assests/paws-logo.png";
-import { Button } from "@mui/material";
+import { Alert, Button, Snackbar } from "@mui/material";
 import { PawsSearch } from "./mockPawsSearch";
 import pawsMainMenu from "../assests/paws/paws-main-menu.PNG";
 
-export const MockPawsWindow = () => {
+export const MockPawsWindow = ({ tutorial }) => {
+  const [open, setOpen] = useState(true);
+  const vertical = 'bottom';
+  const horizontal= 'center';
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return(
     <Window>
       <Header>
@@ -27,6 +35,11 @@ export const MockPawsWindow = () => {
       <Page>
         <img src={pawsMainMenu} alt="main menu" height={300} width={1400} />
       </Page>
+      <Snackbar open={open} onClose={handleClose} anchorOrigin={{vertical, horizontal}}>
+        <Alert onClose={handleClose} severity="success" variant="filled" sx={{ width: '100%' }}>
+          Success, you've completed this tutorial, return to Self Registration page by click the Tutorials pill in the top left of the page.
+        </Alert>
+      </Snackbar>
     </Window>
   );
 };
@@ -77,9 +90,8 @@ const Window = styled.div`
   overflow: auto;
   border-style: solid;
   border-width: 5px;
-  border-color: white;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border-color: #005028;
+  border-radius: 5px 5px 0 0;
   overflow-y: auto;
 `;
 
