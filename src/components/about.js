@@ -14,5 +14,5 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 90vh;
-background-color: #176122;
+background-color: white;
 `;

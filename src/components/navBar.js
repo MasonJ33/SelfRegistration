@@ -9,13 +9,13 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import styled from '@emotion/styled';
-import logo from '../assests/gcsu-logo.jpg';
+import logo from '../assests/paws-logo.png';
 import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const pages = [
   {label: "Home", value: "home"},
-  {label: "Self Registration", value: "selfRegistration"},
+  {label: "Tutorials", value: "tutorials"},
   {label: "Videos", value: "videos"},
   {label: "About", value:"about"}
 ];
@@ -110,12 +110,12 @@ export const NavBar = () => {
 };
 
 const StyledAppBar = styled(AppBar)`
-  background-color: white;
-  color: #176122;
+  background-color: #005028;
+  color: white;
   display: flex;
 `;
 
 const StyledButton = styled(Button)`
   font-weight: 600;
-  color: #176122;
+  color: white;
 `;

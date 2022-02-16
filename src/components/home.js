@@ -13,12 +13,12 @@ export const Home = () => {
           <Head>
             Welcome to Georgia College's Self-Registration tutorial website!
           </Head>
-          <Body>
+          <Container3>
             This website is designed to help you learn and eventually complete the self-registration process!
             Above in the navbar you will see different tabs that will help with this learning process.
             We reccomend you start with the videos, which will help you learn the layouts and different links needed to follow
             to start the self-registration process!
-          </Body>
+          </Container3>
         </Container>
         <Container2>
         <Message>
@@ -27,10 +27,10 @@ export const Home = () => {
           </Message>
         </Container2>
         <Container>  
-          <Body>
+          <Container3>
             Below are some links to the actual PAWS and Unify websites in case you have completed everything here and wish to try
             logging in on the actual sites.
-          </Body>
+          </Container3>
           <Message>
             <StyledButton onClick={() => window.open('https://unify.gcsu.edu/')}>Click Here</StyledButton>
             to go to Unify.
@@ -57,7 +57,7 @@ const Page = styled.div`
   justify-content: center;
   align-items: center;
   height: 90vh;
-  background-color: #176122;
+  background-color: white;
 `;
 
 const Container = styled.div`
@@ -95,7 +95,7 @@ const Message = styled.h1`
 `
 
 
-const Body = styled.body`
+const Container3 = styled.div`
   padding: 3px 3px 30px 30px;
   display: flex;
   align-items: left;
