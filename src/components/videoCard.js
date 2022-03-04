@@ -3,9 +3,12 @@ import styled from "@emotion/styled";
 import CancelIcon from '@mui/icons-material/Cancel';
 import { Typography } from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
 export const VideoCard = ({ title, video }) => {
   const [watched, setWatched] = useState(false);
+  let navigate = useNavigate();
 
   return (
     <VideoContainer>
@@ -16,6 +19,7 @@ export const VideoCard = ({ title, video }) => {
         <VideoWindow>
           <Vid id= "vid1" src={video} height='180' controls onEnded={() => setWatched(true)}/>
         </VideoWindow>
+        
       </Card>
       {watched ? (
         <AccordionFooter watch>
@@ -32,9 +36,15 @@ export const VideoCard = ({ title, video }) => {
           </Typography>
         </AccordionFooter>
       )}
+      <StyledButton onClick={() => watched ? navigate('/tutorials/1') : navigate("")}
+      >Tutorial</StyledButton>
+      
     </VideoContainer>
   )
+
+  
 }
+
 
 // var myVideo = document.getElementById("vid1"); 
 
@@ -111,4 +121,13 @@ const AccordionFooter = styled.div`
   border-top: ${props => props.watch ? "5px solid #005028" : "5px solid red"};
   border-radius: 0 0 25px 25px;
   padding-left: 8px;
+`;
+
+const StyledButton = styled(Button)`
+  background-color: #005028;
+  margin-left: 120px;
+  color: white;
+  &:hover {
+    background-color: #32C448;
+  }
 `;
