@@ -5,7 +5,19 @@ import { useNavigate } from "react-router-dom";
 import { VideoCard } from "./videoCard";
 
 export const Videos = () => {
-    const videos = ['Video1', 'Video2', 'Video3'];
+    const videos = [
+      {
+        name: 'Add Courses via College Scheduler',
+        src: "./tutorialVideos/vid1.mov"
+      },
+      {
+        name: 'Find Registration/Select Term',
+        src: "./tutorialVideos/vid2.mov"
+      },
+      {
+        name: 'Video3',
+        src: " "
+      }];
     let navigate = useNavigate();
 
     return (
@@ -14,8 +26,8 @@ export const Videos = () => {
           <Window>
           <Grid container spacing={1}>
             {videos.map((video) => (
-              <VidGrid key={video} item xs={4}>
-                <VideoCard title={video}/>
+              <VidGrid key={video.name} item xs={4}>
+                <VideoCard title={video.name} video={video.src}/>
               </VidGrid>
             ))}
           </Grid>
