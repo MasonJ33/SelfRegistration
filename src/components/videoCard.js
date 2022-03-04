@@ -15,9 +15,12 @@ export const VideoCard = ({ title, video }) => {
           {title}
         </HeaderContainer>
         <VideoWindow>
-          <IconButton onClick={() => setWatched(!watched)}>
-            {/*TODO: add actual video/thumbnail here*/}
-            <PlayCircleIcon />
+          <IconButton onClick={() => {setWatched(!watched);playPause();openFullscreen()}}>
+            <div>  
+              <video id= "vid1" src={video} height='180'/>
+              {/*TODO: add actual video/thumbnail here*/}
+              <PlayCircleIcon />
+            </div>
           </IconButton>
         </VideoWindow>
       </Card>
@@ -40,6 +43,35 @@ export const VideoCard = ({ title, video }) => {
   )
 }
 
+var myVideo = document.getElementById("vid1"); 
+
+function playPause() { 
+  if (myVideo.paused) 
+    myVideo.play(); 
+  else 
+    myVideo.pause(); 
+} 
+
+function openFullscreen() {
+  if (myVideo.requestFullscreen) {
+    myVideo.requestFullscreen();
+  } else if (myVideo.webkitRequestFullscreen) { /* Safari */
+    myVideo.webkitRequestFullscreen();
+  } else if (myVideo.msRequestFullscreen) { /* IE11 */
+    myVideo.msRequestFullscreen();
+  }
+}
+
+myVideo.addEventListener(
+  'fullscreenchange',
+  function(event) {
+    if (!document.fullscreenElement) {
+      myVideo.pause();
+    }
+  },
+  false
+);
+
 const VideoContainer = styled.div`
   width: 325px;
   border-radius: 15px;
@@ -60,7 +92,7 @@ const HeaderContainer = styled.div`
   height: 50px;
   border-radius: 15px 15px 0 0;
   width: 100%;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
   color: white;
   background-color: #005028;
