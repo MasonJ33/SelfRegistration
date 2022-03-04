@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import CancelIcon from '@mui/icons-material/Cancel';
-import PlayCircleIcon from '@mui/icons-material/PlayCircle';
-import { IconButton, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export const VideoCard = ({ title, video }) => {
@@ -15,13 +14,7 @@ export const VideoCard = ({ title, video }) => {
           {title}
         </HeaderContainer>
         <VideoWindow>
-          <IconButton onClick={() => {setWatched(!watched);playPause();openFullscreen()}}>
-            <div>  
-              <video id= "vid1" src={video} height='180'/>
-              {/*TODO: add actual video/thumbnail here*/}
-              <PlayCircleIcon />
-            </div>
-          </IconButton>
+          <Vid id= "vid1" src={video} height='180' controls onEnded={() => setWatched(true)}/>
         </VideoWindow>
       </Card>
       {watched ? (
@@ -43,34 +36,38 @@ export const VideoCard = ({ title, video }) => {
   )
 }
 
-var myVideo = document.getElementById("vid1"); 
+// var myVideo = document.getElementById("vid1"); 
 
-function playPause() { 
-  if (myVideo.paused) 
-    myVideo.play(); 
-  else 
-    myVideo.pause(); 
-} 
+// function playPause() { 
+//   if (myVideo.paused) 
+//     myVideo.play(); 
+//   else 
+//     myVideo.pause(); 
+// } 
 
-function openFullscreen() {
-  if (myVideo.requestFullscreen) {
-    myVideo.requestFullscreen();
-  } else if (myVideo.webkitRequestFullscreen) { /* Safari */
-    myVideo.webkitRequestFullscreen();
-  } else if (myVideo.msRequestFullscreen) { /* IE11 */
-    myVideo.msRequestFullscreen();
-  }
-}
+// function openFullscreen() {
+//   if (myVideo.requestFullscreen) {
+//     myVideo.requestFullscreen();
+//   } else if (myVideo.webkitRequestFullscreen) { /* Safari */
+//     myVideo.webkitRequestFullscreen();
+//   } else if (myVideo.msRequestFullscreen) { /* IE11 */
+//     myVideo.msRequestFullscreen();
+//   }
+// }
 
-myVideo.addEventListener(
-  'fullscreenchange',
-  function(event) {
-    if (!document.fullscreenElement) {
-      myVideo.pause();
-    }
-  },
-  false
-);
+// myVideo.addEventListener(
+//   'fullscreenchange',
+//   function(event) {
+//     if (!document.fullscreenElement) {
+//       myVideo.pause();
+//     }
+//   },
+//   false
+// );
+
+const Vid = styled.video`
+  width: 100%;
+`;
 
 const VideoContainer = styled.div`
   width: 325px;
@@ -104,6 +101,7 @@ const VideoWindow = styled.div`
   align-items: center;
   justify-content: center;
   height: 200px;
+  max-width: 100%;
   margin: 0;
 `;
 

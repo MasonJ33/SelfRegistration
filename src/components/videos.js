@@ -3,16 +3,18 @@ import { Button, Grid } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { VideoCard } from "./videoCard";
+import VideoOne from "../assests/videos/vid1.mov";
+import VideoTwo from "../assests/videos/vid2.mov";
 
 export const Videos = () => {
     const videos = [
       {
         name: 'Add Courses via College Scheduler',
-        src: "./tutorialVideos/vid1.mov"
+        src: VideoOne
       },
       {
         name: 'Find Registration/Select Term',
-        src: "./tutorialVideos/vid2.mov"
+        src: VideoTwo
       },
       {
         name: 'Video3',
