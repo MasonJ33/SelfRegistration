@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Nav } from "./colledgeSchedulerNav";
 import pawsLogo from "../../assests/collegeScheduler/gcsuLogo.png"
-import { Button, Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 
 export const Picker = () => {
   return (
