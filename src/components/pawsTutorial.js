@@ -5,16 +5,22 @@ import styled from "@emotion/styled";
 import { Breadcrumbs, Link, Typography } from "@mui/material";
 import { StartScreen } from "./startScreen";
 import { ProgressBar } from "./progressBar";
+import { UnifyLoginWindow } from "./unifyLoginWindow";
+import { Home } from "./collegeScheduler/collegeSchedulerHome";
+import { Picker } from "./collegeScheduler/collegeSchedulerPicker";
 
 export const PawsTutorial = ({ tutorial }) => {
   const [hint, setHint] = useState(undefined);
   const [progress, setProgress] = useState(localStorage.getItem('pawsTutorialProgress'));
 
-  const renderTutorialPage = () => {
+  const renderTutorialPage = () => { console.log("clicked")
     const val = parseInt(progress);
     switch (true) {
-      case (val > 50): return <MockPawsWindow tutorial={tutorial}/>
-      case (val === 50): return <MockWindow setProgress={setProgress} tutorial={tutorial} hint={hint}/>
+      case( val > 64 ) : return <Picker tutorial={tutorial} setProgress={setProgress}/> 
+      case (val > 48 && val <= 64): return <Home tutorial={tutorial} setProgress={setProgress}/>
+      case (val > 32 && val <= 48): return <UnifyLoginWindow tutorial={tutorial} setProgress={setProgress}/>
+      case (val > 16 && val <= 32): return <MockPawsWindow tutorial={tutorial} setProgress={setProgress}/>
+      case (val === 16): return <MockWindow setProgress={setProgress} tutorial={tutorial} hint={hint}/>
       default: return <StartScreen setProgress={setProgress} tutorial={tutorial}/>
     }
   }
