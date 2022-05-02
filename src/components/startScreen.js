@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 
 export const StartScreen = ({ tutorial, setProgress }) => {
   const progressClick = () => {
-    localStorage.setItem('pawsTutorialProgress', 50);
+    localStorage.setItem('pawsTutorialProgress', 16);
     setProgress(localStorage.getItem("pawsTutorialProgress"));
   }
 

@@ -24,7 +24,7 @@ export const UnifyOptions = ({ setProgress, hint }) => {
   };
 
   const progressClick = () => {
-    localStorage.setItem('pawsTutorialProgress', 100);
+    localStorage.setItem('pawsTutorialProgress', 32);
     setProgress(localStorage.getItem('pawsTutorialProgress'));
   }
 
